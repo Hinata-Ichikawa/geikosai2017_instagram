@@ -9,24 +9,22 @@ $accessTokenSecret = "rsIXMZKnjQrUhy6HOL3Z2wiwVoczLSIIu8SvPCfSBNzND";
 
 $connection = new TwistOAuth($consumerKey, $consumerSecret, $accessToken, $accessTokenSecret);
 
+$images_array = array();
+
 // ハッシュタグによるツイート検索
 $hash_params = ['q' => '#芸工祭2017' ,'count' => '100', 'lang'=>'ja', "result_type"=>"recent"];
 $hash = $connection->get('search/tweets', $hash_params)->statuses;
 
 foreach ($hash as $value) {
-  getTweetImage($value);
-}
-
-function getTweetImage($value){
   //ツイート内容
   $text = htmlspecialchars($value->text, ENT_QUOTES, 'UTF-8', false);
 
-  // media(画像)が存在するか
   if (isset($value->extended_entities->media)){
     //RTではないか
     $text_top =  mb_substr($text, 0, 2);
     if($text_top != 'RT'){
       foreach($value->extended_entities->media as $key => $media) {
+
         if (isset($value->extended_entities->media[$key])) {
           // iamge
           $image = $value->extended_entities->media[$key]->media_url;
@@ -46,9 +44,14 @@ function getTweetImage($value){
           // twitterの投稿URL
           $url = 'https://twitter.com/' . $screen_name . '/status/' . $tweet_id;
 
-          echo '<img src='.$image.'>';
+          array_push($images_array, $image);
         }
       }
+      // foreach ($images_array as $value) {
+      //   echo $value;
+      //   echo '<br>';
+      //
+      // }
     }
   }
 }
