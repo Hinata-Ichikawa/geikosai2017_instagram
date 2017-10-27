@@ -1,0 +1,77 @@
+@font-face {
+font-family: 'Billabong';
+font-style: normal;
+font-weight: normal;
+src: local('Billabong'), url('Billabong.woff') format('woff');
+}
+
+body{
+  font-family: -apple-system, BlinkMacSystemFont;
+}
+
+.header{
+  background-color: #FFF;
+  border-bottom: 2px solid #DBDBDB;
+  height: 10vh;
+  width: 100vw;
+}
+
+.title{
+  font-family: 'Billabong';
+  font-size: 3vw;
+  letter-spacing: .1vw;
+  text-align: center;
+  margin-top: 3vh;
+}
+
+.container{
+  background-color: #F9F9F9;
+}
+
+.profile{
+  display: flex;
+  height: 40vh;
+  margin: 0 auto;
+  padding-top: 7vh;
+  width: 61vw;
+}
+
+.profile-name{
+  margin-top: 3vh;
+}
+
+.profile-img{
+  border-radius: 50%;
+  height: 13vw;
+  margin-right: 10vw;
+  width: 13vw;
+}
+
+.profile-right a{
+  color: #000;
+  margin-top: 1.5vh;
+}
+
+.object-fit-img {
+  object-fit: contain;
+  font-family: 'object-fit: contain;'
+}
+
+.img-container{
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  width: 72vw;
+}
+
+.img-box{
+  height: 24vw;
+  text-align: center;
+  width: 24vw;
+}
+
+.img-box img{
+  height: 22vw;
+  width: 22vw;
+  object-fit: cover;
+}
