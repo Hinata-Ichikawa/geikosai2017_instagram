@@ -64,6 +64,10 @@ body{
   width: 72vw;
 }
 
+.img-container a {
+  cursor: pointer;
+}
+
 .img-box{
   height: 24vw;
   text-align: center;
@@ -74,4 +78,45 @@ body{
   height: 22vw;
   width: 22vw;
   object-fit: cover;
+}
+
+@media (max-width: 750px) {
+  .profile{
+    height: 25vh;
+  }
+
+  .profile-img{
+    margin-right: 2vw;
+    height: 25vw;
+    width: 25vw;
+  }
+
+  .img-container{
+    width: 98vw;
+    margin-left: 1vw;
+  }
+
+  .img-box{
+    height: 32vw;
+    width: 32vw;
+  }
+
+  .img-box img{
+    height: 30vw;
+    width: 30vw;
+  }
+
+  .profile-name{
+    margin-top: .1vh;
+    font-size: 4vw;
+  }
+
+  .profile-right p{
+    font-size: 3vw;
+  }
+
+  .title {
+    font-size: 10vw;
+  }
+
 }

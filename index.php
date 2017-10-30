@@ -1,4 +1,5 @@
-<?php #require_once 'twitter.php'; ?>
+<?php require_once 'TwistOAuth.phar';?>
+<?php require_once 'twitter.php'; ?>
 
 <!DOCTYPE html>
 <html>
@@ -18,42 +19,28 @@
 
 </head>
 <body>
-	<header class="header">
-		<h1 class="title">Bombjistagram</h1>	
-	</header>
-	<div class="container">
-		<div class="profile">
-			<img class="profile-img" src="/images/profile-img.png" alt="">
-			<div class="profile-right">
-				<h2 class="profile-name">#芸工祭2017</h2>
-				<p>芸工祭のwebサイト => <a href="http://geikousai-ncu.com/">geikousai-ncu.com</a></p>
-				<p>芸工祭の告知動画 => <a href="https://www.youtube.com/watch?v=T8UcWyatYIw">youtube.com</a></p>
-			</div>
-		</div>	
-		<div class="img-container">
-			<div class="img-box">
-				<img class="object-fit-img" src="/images/sample2.jpeg" alt="">
-			</div>
-			<div class="img-box">
-				<img class="object-fit-img" src="/images/sample2.jpeg" alt="">
-			</div>
-			<div class="img-box">
-				<img class="object-fit-img" src="/images/sample2.jpeg" alt="">
-			</div>
-			<div class="img-box">
-				<img class="object-fit-img" src="/images/sample2.jpeg" alt="">
-			</div>
-			<div class="img-box">
-				<img class="object-fit-img" src="/images/sample2.jpeg" alt="">
-			</div>
-			<div class="img-box">
-				<img class="object-fit-img" src="/images/sample2.jpeg" alt="">
-			</div>
-			<div class="img-box">
-				<img class="object-fit-img" src="/images/sample2.jpeg" alt="">
-			</div>
-		</div>
-	</div>
- 
+  <header class="header">
+    <h1 class="title">Bombjistagram</h1>
+  </header>
+  <div class="container">
+    <div class="profile">
+      <img class="profile-img" src="images/profile-img.png" alt="">
+      <div class="profile-right">
+      <h2 class="profile-name">#芸工祭2017</h2>
+      <p>芸工祭のwebサイト => <a href="http://geikousai-ncu.com/">geikousai-ncu.com</a></p>
+      <p>芸工祭の告知動画 => <a href="https://www.youtube.com/watch?v=T8UcWyatYIw">youtube.com</a></p>
+      </div>
+    </div>
+    <div class="img-container">
+      <?php foreach ($images_array as $key => $value) {?>
+      <a href="<?php echo $url_array[$key]?>" target="_blank">
+        <div class="img-box">
+          <img class="object-fit-img" src="<?php echo $value; ?>" alt="">
+        </div>
+      </a>
+      <?php }?>
+    </div>
+  </div>
+
 </body>
 </html>
